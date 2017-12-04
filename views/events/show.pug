@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+  img(src="/images/eventImage.jpg", alt=event.eventName)
+  p
+    strong 제목:
+    span= event.eventName
+  p  
+    strong 장소:
+    span= event.place
+  p  
+    strong 시작시간:
+    span= event.startTime
+  p
+    strong 종료시간:
+    span= event.endTime
+  p
+    strong 분야:
+    span= event.category
+  p  
+    strong 상세 설명:
+    span= event.eventExp
+  p
+    strong 가격:
+    span= event.price
+  p  
+    strong 조직 이름:
+    span= event.groupName
+  p
+    strong 조직 설명:
+    span= event.groupExp
+    
+  a.btn.btn-default(href='/events') Resister
+  a.btn.btn-default(href='/remove') Remove     
+  a.btn.btn-default(href='/events') 목록으로

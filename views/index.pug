@@ -1,0 +1,18 @@
+extends layout
+
+block hero-unit
+  .jumbotron
+    .container
+      h1 Find your next experience
+      nav.navbar.navbar-light.bg-light
+        form.form-inline
+          input.form-control(type="text", class="form-control", placeholder="Search events or categories", aria-label="categories")
+          input.form-control(type="text", class="form-control", placeholder="City of location", aria-label="city")
+          input.form-control(type="text", class="form-control", placeholder="Date", aria-label="Date")
+          a.btn.btn-primary.btn-lg(href="/") SEARCH
+
+
+block content
+  .container
+    .row
+      .col-md-4

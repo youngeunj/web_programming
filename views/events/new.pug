@@ -1,0 +1,49 @@
+extends ../layout
+
+block content
+  form(action='/events', method='POST')
+    .form-group
+      label 제목
+      input.form-control(name='eventName')
+    .form-group
+      label 장소
+      input.form-control(name='place')
+    .form-group
+      label 시작시간
+      input.form-control(name='startTime')
+    .form-group
+      label 종료시간
+      input.form-control(name='endTime')
+    .form-group
+      label 분야
+      p
+        label business
+        input(type='radio', name='category', value='Business')
+        label Science&amp;Tech
+        input(type='radio', name ='category' value='Science&Tech')
+        label Arts
+        input(type='radio', name ='category' value='Arts')
+        label Health
+        input(type='radio', name ='category' value='Health')
+        label Other
+        input(type='radio', name ='category' value='Other')
+    .form-group
+      label 상세 설명
+      input.form-control(name='eventExp')
+    .form-group
+      label 가격
+      .span
+        input(type='radio', name='free')
+        label 무료
+      .span
+        input(type='radio', name='nofree')
+        label 유료
+        input(type="text" name='price', value='')
+    .form-group
+      label 조직 이름
+      input.form-control(name='groupName')
+    .form-group
+      label 조직 설명
+      input.form-control(name='groupExp')    
+        
+    input.btn.btn-primary(type='submit', value='Create')

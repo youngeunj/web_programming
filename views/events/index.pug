@@ -1,0 +1,13 @@
+extends ../layout
+
+block content
+  .container
+    .row
+      each event in events
+        .col-md-4
+          a.card(href=`/events/${event.id}`)
+            img.card-img-top(src="/images/eventImage.jpg", alt=event.eventName)
+            span.poster-card-label= event.eventName
+            span.poster-card-label= event.place
+            
+    a.btn.btn-primary(href='/events/new') Create Event
