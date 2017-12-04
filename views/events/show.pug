@@ -30,6 +30,7 @@ block content
     strong 조직 설명:
     span= event.groupExp
     
-  a.btn.btn-default(href='/events') Resister
-  a.btn.btn-default(href='/remove') Remove     
-  a.btn.btn-default(href='/events') 목록으로
+  //a.btn.btn-default(href='/resister') Resister
+  a.btn.btn-default(href='/${event.id}/remove') Remove
+  a.btn.btn-default(href='/${event.id}/edit') Edit     
+  a.btn.btn-default(href='/events') Other events
