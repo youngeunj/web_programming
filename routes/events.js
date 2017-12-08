@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
   Event.find({}, function(err, events) {
     console.log(events);
     res.render('events/index', {events: events});
-  })
+  });
 });
 
 //생성하는 페이지로 이동
@@ -48,40 +48,38 @@ router.post('/', function(req, res, next) {
   });
 });
 
-
-//저장된 이벤트를 보여주는 부분 (이벤트를 누르면 상세 내용 나오게)
+//저장된 이벤트를 보여주는 부분
 router.get('/:id', function(req, res, next) {
   Event.findById(req.params.id, function(err, event) {
     if (err) {
       return next(err);
     }
     res.render('events/show', {event: event});
-  })
+  });
 });
 
 //이벤트 삭제
-router.delete('/:id/remove', needAuth, (req, res, next) => {
- Event.findOneAndRemove({_id: req.params.id, function(err, event) {
+router.delete('/:id', needAuth, (req, res, next) => {
+ Event.findOneAndRemove(req.params.id, function(err, event) {
    if(err) {
      return next(err);
    }
    req.flash('success', 'Deleted Successfully.');
    res.redirect('/events');
- }});
+ });
 });
 
 //이벤트 수정
-/*
 router.get('/:id/edit', needAuth, (req, res, next) => {
   User.findById(req.params.id, function(err, user) {
     if (err) {
       return next(err);
     }
-    res.render('events/edit', {event : event});
+    res.render('events/edit', {event: event});
   });
-});*/
+});
 
-router.put('/:id/edit', needAuth, (req, res, next) => {
+router.put('/:id', needAuth, (req, res, next) => {
   var err = validateForm(req.body);
   if (err) {
     req.flash('danger', err);

@@ -31,6 +31,6 @@ block content
     span= event.groupExp
     
   //a.btn.btn-default(href='/resister') Resister
-  a.btn.btn-default(href='/${event.id}/remove') Remove
-  a.btn.btn-default(href='/${event.id}/edit') Edit     
+  a.btn.btn-default(href=`/events/${event.id}?_method=DELETE`) Remove
+  a.btn.btn-default(href=`/events/${event.id}/edit`) Edit   
   a.btn.btn-default(href='/events') Other events
