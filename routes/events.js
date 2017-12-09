@@ -70,7 +70,7 @@ router.delete('/:id', needAuth, (req, res, next) => {
 });
 
 //이벤트 수정
-router.get('/:id/edit', needAuth, (req, res, next) => {
+/*router.get('/:id/edit', needAuth, (req, res, next) => {
   User.findById(req.params.id, function(err, user) {
     if (err) {
       return next(err);
@@ -101,6 +101,6 @@ router.put('/:id', needAuth, (req, res, next) => {
       req.flash('success', 'Updated successfully.');
       res.redirect('/events');
     });
-});
+});*/
 
 module.exports = router;
